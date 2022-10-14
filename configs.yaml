@@ -1,0 +1,14 @@
+# Default Configuration 
+Data:
+    Path:
+        proj_path: 'C:/data/MattM_Ensemble'  # [CHANGE THIS for new environment]
+        model_path: proj_path/'model_chkpts'
+        
+        data_path: 'C:/data'        # [CONFIRM THIS for new environment]
+        #dataindex_path: data_path/'dataIndex.csv'
+        
+        # Select data folders here
+        data_name: ['HE_RBG_Corp_images']
+        #data_name = ['HE images', 'HIPT_AGH_FluorescentImage_R1']
+        # 2 groups to classify
+        class_names: ['Responder','NonResponder']

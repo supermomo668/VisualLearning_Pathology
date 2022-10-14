@@ -1,0 +1,1593 @@
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:efficientnetb7
+Using pre-trained head:efficientnetb7
+Using pre-trained head:resnext101
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:resnext101
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 10
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.476 Total estimated model params size (MB)
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:resnext101
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:resnext101
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 10
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.476 Total estimated model params size (MB)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:resnext101
+Using pre-trained head:resnext101
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 10
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.476 Total estimated model params size (MB)
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:resnext101
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:resnext101
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 10
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.476 Total estimated model params size (MB)
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+label
+<class 'str'> train
+<class 'str'> train
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:resnext101
+Using pre-trained head:resnext101
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:resnext101
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:resnext101
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 10
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.476 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:efficientnetb7
+Using pre-trained head:resnext101
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:resnext101
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:resnext101
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:resnext101
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 10
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.476 Total estimated model params size (MB)
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:efficientnetb7
+Using pre-trained head:resnext101
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:resnext101
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 10
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.476 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:resnext101
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:resnext101
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 10
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.476 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+Target shape:(200849,)
+[INFO]Image classes: label    2
+dtype: int64 with 200849 instances.
+Target shape:(200849,)
+[INFO]Image classes: label    2
+dtype: int64 with 200849 instances.
+Target shape:(200849,)
+[INFO]Image classes: label    2
+dtype: int64 with 200849 instances.
+('C:\\data\\HE_RBG_Corp_images_processed\\NonResponder', 'HE_RBG_Corp_images', 'NA-24_0000023786_2021-03-22 09_49_45.scn - Series 1 (1, x=16274, y=23991, w=3780, h=3638).tif', 'NA-24_0000023786_2021-03-22 09_49_45.scn - Series 1 (1, x=16274, y=23991, w=3780, h=3638)_t100.tif')
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+C:\data\HE_RBG_Corp_images_processed\Responder
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 10
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.476 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 10
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.476 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+<class 'str'> train
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+<class 'str'> train
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 10
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.476 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+<class 'str'> test
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+<class 'str'> val
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:resnext101
+Using pre-trained head:resnext101
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 10
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.476 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:resnext101
+Using pre-trained head:resnext101
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Debug mode:False
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 10
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.476 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Debug mode:True
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 10
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.476 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+Instance series name:C:\data\HE_RBG_Corp_images_processed\Responder, idx
+Target shape:(200849,)
+[INFO]Image classes: label    2
+dtype: int64 with 200849 instances.
+Debug mode:True
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+Instance series name:C:\data\HE_RBG_Corp_images_processed\NonResponder, 2591
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 10
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.476 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Debug mode:True
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+Instance series: label    NonResponder
+Name: C:\data\HE_RBG_Corp_images_processed\NonResponder, dtype: object,C:\data\HE_RBG_Corp_images_processed\NonResponder, 1258
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 10
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.476 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Debug mode:True
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+Instance series: label    NonResponder
+Name: (C:\data\HE_RBG_Corp_images_processed\NonResponder, HE_RBG_Corp_images, NA11_0000020321_2020-10-07 10_47_44 (7).tif, NA11_0000020321_2020-10-07 10_47_44 (7)_t177.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\NonResponder', 'HE_RBG_Corp_images', 'NA11_0000020321_2020-10-07 10_47_44 (7).tif', 'NA11_0000020321_2020-10-07 10_47_44 (7)_t177.tif'), 888
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 10
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.476 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Debug mode:True
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+Instance series: label    NonResponder
+Name: (C:\data\HE_RBG_Corp_images_processed\NonResponder, HE_RBG_Corp_images, NA25_0000023785_2021-03-22 09_50_59.scn - Series 1 (1, x=31541, y=25037, w=8613, h=10107).tif, NA25_0000023785_2021-03-22 09_50_59.scn - Series 1 (1, x=31541, y=25037, w=8613, h=10107)_t766.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\NonResponder', 'HE_RBG_Corp_images', 'NA25_0000023785_2021-03-22 09_50_59.scn - Series 1 (1, x=31541, y=25037, w=8613, h=10107).tif', 'NA25_0000023785_2021-03-22 09_50_59.scn - Series 1 (1, x=31541, y=25037, w=8613, h=10107)_t766.tif'), 4283
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    NonResponder
+Name: (C:\data\HE_RBG_Corp_images_processed\NonResponder, HE_RBG_Corp_images, NA6_0000021147_2020-11-10 11_17_00 (1).tif, NA6_0000021147_2020-11-10 11_17_00 (1)_t1399.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\NonResponder', 'HE_RBG_Corp_images', 'NA6_0000021147_2020-11-10 11_17_00 (1).tif', 'NA6_0000021147_2020-11-10 11_17_00 (1)_t1399.tif'), 5214
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    NonResponder
+Name: (C:\data\HE_RBG_Corp_images_processed\NonResponder, HE_RBG_Corp_images, NA11_0000020321_2020-10-07 10_47_44 (11).tif, NA11_0000020321_2020-10-07 10_47_44 (11)_t504.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\NonResponder', 'HE_RBG_Corp_images', 'NA11_0000020321_2020-10-07 10_47_44 (11).tif', 'NA11_0000020321_2020-10-07 10_47_44 (11)_t504.tif'), 189
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    Responder
+Name: (C:\data\HE_RBG_Corp_images_processed\Responder, HE_RBG_Corp_images, NA27_0000023792_2021-03-22 10_32_56.scn - Series 3 (1, x=3023, y=37395, w=10366, h=8997).tif, NA27_0000023792_2021-03-22 10_32_56.scn - Series 3 (1, x=3023, y=37395, w=10366, h=8997)_t1701.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\Responder', 'HE_RBG_Corp_images', 'NA27_0000023792_2021-03-22 10_32_56.scn - Series 3 (1, x=3023, y=37395, w=10366, h=8997).tif', 'NA27_0000023792_2021-03-22 10_32_56.scn - Series 3 (1, x=3023, y=37395, w=10366, h=8997)_t1701.tif'), 14357
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    Responder
+Name: (C:\data\HE_RBG_Corp_images_processed\Responder, HE_RBG_Corp_images, NA12_0000020322_2020-10-07 10_47_22 (2).tif, NA12_0000020322_2020-10-07 10_47_22 (2)_t438.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\Responder', 'HE_RBG_Corp_images', 'NA12_0000020322_2020-10-07 10_47_22 (2).tif', 'NA12_0000020322_2020-10-07 10_47_22 (2)_t438.tif'), 7774
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    Responder
+Name: (C:\data\HE_RBG_Corp_images_processed\Responder, HE_RBG_Corp_images, NA5_0000020845_2020-10-28 11_04_46 (10).tif, NA5_0000020845_2020-10-28 11_04_46 (10)_t26.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\Responder', 'HE_RBG_Corp_images', 'NA5_0000020845_2020-10-28 11_04_46 (10).tif', 'NA5_0000020845_2020-10-28 11_04_46 (10)_t26.tif'), 17175
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    NonResponder
+Name: (C:\data\HE_RBG_Corp_images_processed\NonResponder, HE_RBG_Corp_images, NA13_000020846_2020-10-28 10_41_18 (9).tif, NA13_000020846_2020-10-28 10_41_18 (9)_t182.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\NonResponder', 'HE_RBG_Corp_images', 'NA13_000020846_2020-10-28 10_41_18 (9).tif', 'NA13_000020846_2020-10-28 10_41_18 (9)_t182.tif'), 2518
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    Responder
+Name: (C:\data\HE_RBG_Corp_images_processed\Responder, HE_RBG_Corp_images, NA19_0000023427_2021-03-04 12_10_24.scn - Series 1 (1, x=14793, y=27221, w=7846, h=8086).tif, NA19_0000023427_2021-03-04 12_10_24.scn - Series 1 (1, x=14793, y=27221, w=7846, h=8086)_t57.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\Responder', 'HE_RBG_Corp_images', 'NA19_0000023427_2021-03-04 12_10_24.scn - Series 1 (1, x=14793, y=27221, w=7846, h=8086).tif', 'NA19_0000023427_2021-03-04 12_10_24.scn - Series 1 (1, x=14793, y=27221, w=7846, h=8086)_t57.tif'), 12195
+torch.Size([3, 224, 224]) torch.float32 () int32
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 10
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.476 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\transforms\functional.py:150: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at  C:\cb\pytorch_1000000000000\work\torch\csrc\utils\tensor_numpy.cpp:178.)
+  img = torch.from_numpy(pic.transpose((2, 0, 1))).contiguous()
+Debug mode:True
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 10
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.476 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Instance series: label    Responder
+Name: (C:\data\HE_RBG_Corp_images_processed\Responder, HE_RBG_Corp_images, NA4PD_0000020847_2020-10-28 10_41_06 (7).tif, NA4PD_0000020847_2020-10-28 10_41_06 (7)_t59.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\Responder', 'HE_RBG_Corp_images', 'NA4PD_0000020847_2020-10-28 10_41_06 (7).tif', 'NA4PD_0000020847_2020-10-28 10_41_06 (7)_t59.tif'), 16944
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    NonResponder
+Name: (C:\data\HE_RBG_Corp_images_processed\NonResponder, HE_RBG_Corp_images, NA6_0000021147_2020-11-10 11_17_00 (9).tif, NA6_0000021147_2020-11-10 11_17_00 (9)_t1133.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\NonResponder', 'HE_RBG_Corp_images', 'NA6_0000021147_2020-11-10 11_17_00 (9).tif', 'NA6_0000021147_2020-11-10 11_17_00 (9)_t1133.tif'), 6643
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    NonResponder
+Name: (C:\data\HE_RBG_Corp_images_processed\NonResponder, HE_RBG_Corp_images, NA6_0000021147_2020-11-10 11_17_00 (5).tif, NA6_0000021147_2020-11-10 11_17_00 (5)_t1185.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\NonResponder', 'HE_RBG_Corp_images', 'NA6_0000021147_2020-11-10 11_17_00 (5).tif', 'NA6_0000021147_2020-11-10 11_17_00 (5)_t1185.tif'), 5938
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    Responder
+Name: (C:\data\HE_RBG_Corp_images_processed\Responder, HE_RBG_Corp_images, NA27_0000023788_2021-03-22 08_00_11.scn - Series 1 (1, x=0, y=60283, w=14823, h=6221).tif, NA27_0000023788_2021-03-22 08_00_11.scn - Series 1 (1, x=0, y=60283, w=14823, h=6221)_t1729.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\Responder', 'HE_RBG_Corp_images', 'NA27_0000023788_2021-03-22 08_00_11.scn - Series 1 (1, x=0, y=60283, w=14823, h=6221).tif', 'NA27_0000023788_2021-03-22 08_00_11.scn - Series 1 (1, x=0, y=60283, w=14823, h=6221)_t1729.tif'), 13422
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    NonResponder
+Name: (C:\data\HE_RBG_Corp_images_processed\NonResponder, HE_RBG_Corp_images, NA11_0000020321_2020-10-07 10_47_44 (7).tif, NA11_0000020321_2020-10-07 10_47_44 (7)_t283.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\NonResponder', 'HE_RBG_Corp_images', 'NA11_0000020321_2020-10-07 10_47_44 (7).tif', 'NA11_0000020321_2020-10-07 10_47_44 (7)_t283.tif'), 898
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    NonResponder
+Name: (C:\data\HE_RBG_Corp_images_processed\NonResponder, HE_RBG_Corp_images, NA13_000020846_2020-10-28 10_41_18 (1).tif, NA13_000020846_2020-10-28 10_41_18 (1)_t927.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\NonResponder', 'HE_RBG_Corp_images', 'NA13_000020846_2020-10-28 10_41_18 (1).tif', 'NA13_000020846_2020-10-28 10_41_18 (1)_t927.tif'), 1266
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    Responder
+Name: (C:\data\HE_RBG_Corp_images_processed\Responder, HE_RBG_Corp_images, NA17_0000023425_2021-03-04 12_36_10.scn - Series 1 (1, x=52561, y=20444, w=9500, h=9861).tif, NA17_0000023425_2021-03-04 12_36_10.scn - Series 1 (1, x=52561, y=20444, w=9500, h=9861)_t1359.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\Responder', 'HE_RBG_Corp_images', 'NA17_0000023425_2021-03-04 12_36_10.scn - Series 1 (1, x=52561, y=20444, w=9500, h=9861).tif', 'NA17_0000023425_2021-03-04 12_36_10.scn - Series 1 (1, x=52561, y=20444, w=9500, h=9861)_t1359.tif'), 11567
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    NonResponder
+Name: (C:\data\HE_RBG_Corp_images_processed\NonResponder, HE_RBG_Corp_images, NA18_0000023426_2021-03-04 12_22_05.scn - Series 2 (1, x=53119, y=18767, w=9223, h=9465).tif, NA18_0000023426_2021-03-04 12_22_05.scn - Series 2 (1, x=53119, y=18767, w=9223, h=9465)_t1351.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\NonResponder', 'HE_RBG_Corp_images', 'NA18_0000023426_2021-03-04 12_22_05.scn - Series 2 (1, x=53119, y=18767, w=9223, h=9465).tif', 'NA18_0000023426_2021-03-04 12_22_05.scn - Series 2 (1, x=53119, y=18767, w=9223, h=9465)_t1351.tif'), 3554
+torch.Size([3, 224, 224]) torch.float32 () int32
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:efficientnetb7
+Using pre-trained head:resnext101
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:resnext101
+Debug mode:True
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+  | Name       | Type     | Params
+----------------------------------------
+0 | classifier | Linear   | 18
+1 | accuracy   | Accuracy | 0
+2 | AUROC      | AUROC    | 0
+----------------------------------------
+18        Trainable params
+0         Non-trainable params
+18        Total params
+0.000     Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+Instance series: label    NonResponder
+Name: (C:\data\HE_RBG_Corp_images_processed\NonResponder, HE_RBG_Corp_images, NA13_000020846_2020-10-28 10_41_18 (4).tif, NA13_000020846_2020-10-28 10_41_18 (4)_t1281.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\NonResponder', 'HE_RBG_Corp_images', 'NA13_000020846_2020-10-28 10_41_18 (4).tif', 'NA13_000020846_2020-10-28 10_41_18 (4)_t1281.tif'), 1954
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    NonResponder
+Name: (C:\data\HE_RBG_Corp_images_processed\NonResponder, HE_RBG_Corp_images, NA8_0000020318_2020-10-07 09_32_42.scn - Series 1 (7).tif, NA8_0000020318_2020-10-07 09_32_42.scn - Series 1 (7)_t78.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\NonResponder', 'HE_RBG_Corp_images', 'NA8_0000020318_2020-10-07 09_32_42.scn - Series 1 (7).tif', 'NA8_0000020318_2020-10-07 09_32_42.scn - Series 1 (7)_t78.tif'), 6996
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    Responder
+Name: (C:\data\HE_RBG_Corp_images_processed\Responder, HE_RBG_Corp_images, NA5_0000020845_2020-10-28 11_04_46 (17).tif, NA5_0000020845_2020-10-28 11_04_46 (17)_t1418.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\Responder', 'HE_RBG_Corp_images', 'NA5_0000020845_2020-10-28 11_04_46 (17).tif', 'NA5_0000020845_2020-10-28 11_04_46 (17)_t1418.tif'), 18232
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    NonResponder
+Name: (C:\data\HE_RBG_Corp_images_processed\NonResponder, HE_RBG_Corp_images, NA13_000020846_2020-10-28 10_41_18 (4).tif, NA13_000020846_2020-10-28 10_41_18 (4)_t586.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\NonResponder', 'HE_RBG_Corp_images', 'NA13_000020846_2020-10-28 10_41_18 (4).tif', 'NA13_000020846_2020-10-28 10_41_18 (4)_t586.tif'), 1883
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    Responder
+Name: (C:\data\HE_RBG_Corp_images_processed\Responder, HE_RBG_Corp_images, NA17_0000023425_2021-03-04 12_36_10.scn - Series 2 (1, x=53498, y=44840, w=6745, h=6362).tif, NA17_0000023425_2021-03-04 12_36_10.scn - Series 2 (1, x=53498, y=44840, w=6745, h=6362)_t786.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\Responder', 'HE_RBG_Corp_images', 'NA17_0000023425_2021-03-04 12_36_10.scn - Series 2 (1, x=53498, y=44840, w=6745, h=6362).tif', 'NA17_0000023425_2021-03-04 12_36_10.scn - Series 2 (1, x=53498, y=44840, w=6745, h=6362)_t786.tif'), 12038
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    NonResponder
+Name: (C:\data\HE_RBG_Corp_images_processed\NonResponder, HE_RBG_Corp_images, NA28_0000023792_2021-03-22 10_32_56.scn - Series 1 (1, x=26309, y=26080, w=11943, h=8341).tif, NA28_0000023792_2021-03-22 10_32_56.scn - Series 1 (1, x=26309, y=26080, w=11943, h=8341)_t1161.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\NonResponder', 'HE_RBG_Corp_images', 'NA28_0000023792_2021-03-22 10_32_56.scn - Series 1 (1, x=26309, y=26080, w=11943, h=8341).tif', 'NA28_0000023792_2021-03-22 10_32_56.scn - Series 1 (1, x=26309, y=26080, w=11943, h=8341)_t1161.tif'), 4610
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    NonResponder
+Name: (C:\data\HE_RBG_Corp_images_processed\NonResponder, HE_RBG_Corp_images, NA13_000020846_2020-10-28 10_41_18 (1).tif, NA13_000020846_2020-10-28 10_41_18 (1)_t1660.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\NonResponder', 'HE_RBG_Corp_images', 'NA13_000020846_2020-10-28 10_41_18 (1).tif', 'NA13_000020846_2020-10-28 10_41_18 (1)_t1660.tif'), 1368
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    NonResponder
+Name: (C:\data\HE_RBG_Corp_images_processed\NonResponder, HE_RBG_Corp_images, NA-24_0000023786_2021-03-22 09_49_45.scn - Series 1 (1, x=20125, y=20755, w=4086, h=4063).tif, NA-24_0000023786_2021-03-22 09_49_45.scn - Series 1 (1, x=20125, y=20755, w=4086, h=4063)_t234.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\NonResponder', 'HE_RBG_Corp_images', 'NA-24_0000023786_2021-03-22 09_49_45.scn - Series 1 (1, x=20125, y=20755, w=4086, h=4063).tif', 'NA-24_0000023786_2021-03-22 09_49_45.scn - Series 1 (1, x=20125, y=20755, w=4086, h=4063)_t234.tif'), 76
+torch.Size([3, 224, 224]) torch.float32 () int32
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:resnext101
+Using pre-trained head:resnext101
+Debug mode:True
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+Target shape:(140594,)
+[INFO]Image classes: label    2
+dtype: int64 with 140594 instances.
+Target shape:(40171,)
+[INFO]Image classes: label    2
+dtype: int64 with 40171 instances.
+Target shape:(20084,)
+[INFO]Image classes: label    2
+dtype: int64 with 20084 instances.
+Instance series: label    NonResponder
+Name: (C:\data\HE_RBG_Corp_images_processed\NonResponder, HE_RBG_Corp_images, NA11_0000020321_2020-10-07 10_47_44 (8).tif, NA11_0000020321_2020-10-07 10_47_44 (8)_t584.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\NonResponder', 'HE_RBG_Corp_images', 'NA11_0000020321_2020-10-07 10_47_44 (8).tif', 'NA11_0000020321_2020-10-07 10_47_44 (8)_t584.tif'), 962
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    Responder
+Name: (C:\data\HE_RBG_Corp_images_processed\Responder, HE_RBG_Corp_images, NA19_0000023427_2021-03-04 12_10_24.scn - Series 1 (1, x=13752, y=17773, w=9767, h=7927).tif, NA19_0000023427_2021-03-04 12_10_24.scn - Series 1 (1, x=13752, y=17773, w=9767, h=7927)_t1035.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\Responder', 'HE_RBG_Corp_images', 'NA19_0000023427_2021-03-04 12_10_24.scn - Series 1 (1, x=13752, y=17773, w=9767, h=7927).tif', 'NA19_0000023427_2021-03-04 12_10_24.scn - Series 1 (1, x=13752, y=17773, w=9767, h=7927)_t1035.tif'), 12140
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    Responder
+Name: (C:\data\HE_RBG_Corp_images_processed\Responder, HE_RBG_Corp_images, NA4PD_0000020847_2020-10-28 10_41_06 (3).tif, NA4PD_0000020847_2020-10-28 10_41_06 (3)_t802.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\Responder', 'HE_RBG_Corp_images', 'NA4PD_0000020847_2020-10-28 10_41_06 (3).tif', 'NA4PD_0000020847_2020-10-28 10_41_06 (3)_t802.tif'), 16277
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    Responder
+Name: (C:\data\HE_RBG_Corp_images_processed\Responder, HE_RBG_Corp_images, NA-26_0000023787_2021-03-22 09_49_31.scn - Series 2 (1, x=36977, y=50571, w=1434, h=1863).tif, NA-26_0000023787_2021-03-22 09_49_31.scn - Series 2 (1, x=36977, y=50571, w=1434, h=1863)_t24.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\Responder', 'HE_RBG_Corp_images', 'NA-26_0000023787_2021-03-22 09_49_31.scn - Series 2 (1, x=36977, y=50571, w=1434, h=1863).tif', 'NA-26_0000023787_2021-03-22 09_49_31.scn - Series 2 (1, x=36977, y=50571, w=1434, h=1863)_t24.tif'), 7384
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    NonResponder
+Name: (C:\data\HE_RBG_Corp_images_processed\NonResponder, HE_RBG_Corp_images, NA8_0000020318_2020-10-07 09_32_42.scn - Series 1 (6).tif, NA8_0000020318_2020-10-07 09_32_42.scn - Series 1 (6)_t942.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\NonResponder', 'HE_RBG_Corp_images', 'NA8_0000020318_2020-10-07 09_32_42.scn - Series 1 (6).tif', 'NA8_0000020318_2020-10-07 09_32_42.scn - Series 1 (6)_t942.tif'), 6978
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    NonResponder
+Name: (C:\data\HE_RBG_Corp_images_processed\NonResponder, HE_RBG_Corp_images, NA8_0000020318_2020-10-07 09_32_42.scn - Series 1 (8).tif, NA8_0000020318_2020-10-07 09_32_42.scn - Series 1 (8)_t535.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\NonResponder', 'HE_RBG_Corp_images', 'NA8_0000020318_2020-10-07 09_32_42.scn - Series 1 (8).tif', 'NA8_0000020318_2020-10-07 09_32_42.scn - Series 1 (8)_t535.tif'), 7069
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    NonResponder
+Name: (C:\data\HE_RBG_Corp_images_processed\NonResponder, HE_RBG_Corp_images, NA18_0000023426_2021-03-04 12_22_05.scn - Series 2 (1, x=62502, y=43197, w=9223, h=9465).tif, NA18_0000023426_2021-03-04 12_22_05.scn - Series 2 (1, x=62502, y=43197, w=9223, h=9465)_t1294.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\NonResponder', 'HE_RBG_Corp_images', 'NA18_0000023426_2021-03-04 12_22_05.scn - Series 2 (1, x=62502, y=43197, w=9223, h=9465).tif', 'NA18_0000023426_2021-03-04 12_22_05.scn - Series 2 (1, x=62502, y=43197, w=9223, h=9465)_t1294.tif'), 4079
+torch.Size([3, 224, 224]) torch.float32 () int32
+Instance series: label    NonResponder
+Name: (C:\data\HE_RBG_Corp_images_processed\NonResponder, HE_RBG_Corp_images, NA6_0000021147_2020-11-10 11_17_00 (1).tif, NA6_0000021147_2020-11-10 11_17_00 (1)_t755.tif), dtype: object,('C:\\data\\HE_RBG_Corp_images_processed\\NonResponder', 'HE_RBG_Corp_images', 'NA6_0000021147_2020-11-10 11_17_00 (1).tif', 'NA6_0000021147_2020-11-10 11_17_00 (1)_t755.tif'), 5155
+torch.Size([3, 224, 224]) torch.float32 () int32
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 18
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.477 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:efficientnetb7
+Using pre-trained head:resnext101
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:resnext101
+Debug mode:False
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 18
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.477 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:resnext101
+Using pre-trained head:resnext101
+Debug mode:False
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 18
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.477 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:resnext101
+Using pre-trained head:resnext101
+torch.Size([1, 10])
+Using pre-trained head:efficientnetb7
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Using pre-trained head:efficientnetb7
+Using pre-trained head:efficientnetb7
+Using pre-trained head:resnext101
+Using pre-trained head:resnext101
+Debug mode:False
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 22
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.477 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:efficientnetb7
+Using pre-trained head:resnext101
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:resnext101
+Debug mode:False
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 22
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.477 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:efficientnetb7
+Using pre-trained head:resnext101
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:resnext101
+Debug mode:False
+  | Name           | Type       | Params
+----------------------------------------------
+0 | ensemble_model | ModuleList | 364 M
+1 | classifier     | Linear     | 22
+2 | accuracy       | Accuracy   | 0
+3 | AUROC          | AUROC      | 0
+----------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.477 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+torch.Size([8]) torch.int32 torch.Size([8, 2]) torch.float32
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:resnext101
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:resnext101
+Debug mode:False
+  | Name           | Type             | Params
+----------------------------------------------------
+0 | ensemble_model | ModuleList       | 364 M
+1 | classifier     | Linear           | 22
+2 | CEloss         | CrossEntropyLoss | 0
+3 | accuracy       | Accuracy         | 0
+4 | AUROC          | AUROC            | 0
+----------------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.477 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+C:\Users\Windows\AppData\Local\Temp\ipykernel_11288\2031618872.py:58: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(x_data), torch.tensor(y_data, dtype=torch.long)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Argument `pos_label` should be `None` when running multiclass precision recall curve. Got 1
+  warnings.warn(*args, **kwargs)
+torch.Size([8]) torch.int64 torch.Size([8, 2]) torch.float32
+torch.Size([8]) torch.int64 torch.Size([8, 2]) torch.float32
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:resnext101
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:resnext101
+Debug mode:False
+  | Name           | Type             | Params
+----------------------------------------------------
+0 | ensemble_model | ModuleList       | 364 M
+1 | classifier     | Linear           | 22
+2 | CEloss         | CrossEntropyLoss | 0
+3 | accuracy       | Accuracy         | 0
+4 | AUROC          | AUROC            | 0
+----------------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.477 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+C:\Users\Windows\AppData\Local\Temp\ipykernel_11288\2031618872.py:58: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(x_data), torch.tensor(y_data, dtype=torch.long)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Argument `pos_label` should be `None` when running multiclass precision recall curve. Got 1
+  warnings.warn(*args, **kwargs)
+torch.Size([8]) torch.int64 torch.Size([8, 2]) torch.float32
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+torch.Size([8]) torch.int64 torch.Size([8, 2]) torch.float32
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:resnext101
+Using pre-trained head:resnext101
+Debug mode:False
+  | Name           | Type             | Params
+----------------------------------------------------
+0 | ensemble_model | ModuleList       | 364 M
+1 | classifier     | Linear           | 22
+2 | CEloss         | CrossEntropyLoss | 0
+3 | accuracy       | Accuracy         | 0
+4 | AUROC          | AUROC            | 0
+----------------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.477 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:resnext101
+Using pre-trained head:resnext101
+Debug mode:False
+  | Name           | Type             | Params
+----------------------------------------------------
+0 | ensemble_model | ModuleList       | 364 M
+1 | classifier     | Linear           | 22
+2 | CEloss         | CrossEntropyLoss | 0
+3 | accuracy       | Accuracy         | 0
+4 | AUROC          | AUROC            | 0
+----------------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.477 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+C:\Users\Windows\AppData\Local\Temp\ipykernel_11288\2031618872.py:58: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(x_data), torch.tensor(y_data, dtype=torch.long)
+torch.Size([8]) torch.int64 torch.Size([8, 2]) torch.float32
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Argument `pos_label` should be `None` when running multiclass precision recall curve. Got 1
+  warnings.warn(*args, **kwargs)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+torch.Size([8]) torch.int64 torch.Size([8, 2]) torch.float32
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:efficientnetb7
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:resnext101
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:resnext101
+Debug mode:False
+  | Name           | Type             | Params
+----------------------------------------------------
+0 | ensemble_model | ModuleList       | 364 M
+1 | classifier     | Linear           | 22
+2 | CEloss         | CrossEntropyLoss | 0
+3 | accuracy       | Accuracy         | 0
+4 | AUROC          | AUROC            | 0
+----------------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.477 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+C:\Users\Windows\AppData\Local\Temp\ipykernel_11288\1732272924.py:58: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(x_data), torch.tensor(y_data, dtype=torch.long)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Argument `pos_label` should be `None` when running multiclass precision recall curve. Got 1
+  warnings.warn(*args, **kwargs)
+torch.Size([8]) torch.int64 torch.Size([8, 2]) torch.float32
+torch.Size([8]) torch.int64 torch.Size([8, 2]) torch.float32
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\loggers\wandb.py:352: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+Using pre-trained head:efficientnetb7
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\trainer.py:1764: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=2)`.
+  rank_zero_warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=EfficientNet_B7_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B7_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchmetrics\utilities\prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Using pre-trained head:efficientnetb7
+Using pre-trained head:efficientnetb7
+Using pre-trained head:resnext101
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNeXt101_32X8D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt101_32X8D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using pre-trained head:resnext101
+Debug mode:False
+  | Name           | Type             | Params
+----------------------------------------------------
+0 | ensemble_model | ModuleList       | 364 M
+1 | classifier     | Linear           | 22
+2 | CEloss         | CrossEntropyLoss | 0
+3 | accuracy       | Accuracy         | 0
+4 | AUROC          | AUROC            | 0
+----------------------------------------------------
+364 M     Trainable params
+0         Non-trainable params
+364 M     Total params
+1,459.477 Total estimated model params size (MB)
+C:\Users\Windows\anaconda3\envs\ensemble_vision\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:236: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 64 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
