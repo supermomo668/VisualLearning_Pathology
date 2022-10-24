@@ -37,11 +37,16 @@ import pytorch_lightning as pl, torchmetrics
 import albumentations as A
 
 import os
-os.environ["PL_TORCH_DISTRIBUTED_BACKEND"] = "gloo"
-#os.environ["CUDA_LAUNCH_BLOCKING"]="0"
+os.environ["PL_TORCH_DISTRIBUTED_BACKEND"] = "gloo"  # nccl (not for windows)
+# https://pytorch.org/docs/stable/distributed.html
+#     Rule of thumb
+#         Use the NCCL backend for distributed GPU training
+#         Use the Gloo backend for distributed CPU training
+
+os.environ["CUDA_LAUNCH_BLOCKING"]="1"
 AVAIL_GPUS = torch.cuda.device_count()
 AVAIL_CPUS = os.cpu_count()
-use_cuda = True
+print(f"GPUS:{AVAIL_GPUS}|CPUS:{AVAIL_CPUS}")
 
 class PATH_ARGS:
     proj_path = Path('./').absolute()  # [CHANGE THIS for new environment]
@@ -52,7 +57,7 @@ class PATH_ARGS:
     data_path = proj_path.parent
     # 2 types of images (HE  FISH)
     data_name = ['HE_RBG_Corp_images']
-    dataindex_fn = data_name[0]+'_processed/dataIndex.csv'
+    dataindex_fn = data_name[0]+'_processed/dataIndex(ubuntu).csv'
     dataindex_path = data_path/dataindex_fn
     #data_name = ['HE images', 'HIPT_AGH_FluorescentImage_R1']
     # 2 groups to classify
@@ -83,8 +88,8 @@ class META_ARGS:
 
 class DATA_ARGS:
     num_classes = 2
-    batch_size = 128 if AVAIL_GPUS else 64
-    n_workers = 4
+    batch_size = 16 if AVAIL_GPUS else 512
+    n_workers = AVAIL_CPUS   # only work at 0 for strategy=None, 
 
 def _get_normalize_attributes(data_index_df):
     x_imgs = load_img(data_index_df['x_img_path'])
@@ -273,13 +278,15 @@ class HEDataModule(pl.LightningDataModule):
     def train_dataloader(self):
         train_loader = DataLoader(
             self.datasets['train'], batch_size=self.batch_size, shuffle=False if self.sampler['train'] else True, sampler=self.sampler['train'],
-            persistent_workers=True, num_workers=DATA_ARGS.n_workers, pin_memory=True)
+            num_workers=DATA_ARGS.n_workers,
+        )   #persistent_workers=True) #, pin_memory=True)
         return train_loader
 
     def val_dataloader(self):
         valid_loader = DataLoader(
             self.datasets['val'], batch_size=self.batch_size, shuffle=False if self.sampler['val'] else True, sampler=self.sampler['val'],
-            persistent_workers=True, num_workers=DATA_ARGS.n_workers, pin_memory=True)
+            num_workers=DATA_ARGS.n_workers,
+        )  #persistent_workers=True , pin_memory=True)
         return valid_loader
 
 from torchvision.models import EfficientNet_B7_Weights, ResNeXt101_32X8D_Weights, MobileNet_V3_Large_Weights, ResNet50_Weights
@@ -330,6 +337,7 @@ class HEClassificationModel(pl.LightningModule):
             #self.model_head.to(device=META_ARGS.device)     
         # metrics
         self.log_metrics = log_metrics
+        self.sync_dist = True
         if log_metrics:
             self.metric_device = 'cpu'
             self.accuracy = torchmetrics.Accuracy().to(self.metric_device)
@@ -401,13 +409,13 @@ class HEClassificationModel(pl.LightningModule):
         val_loss =self.get_loss(y_hat, y)
         if self.log_metrics:
             acc = self.accuracy(torch.argmax(y_hat, dim=1).to(self.metric_device).detach(), y.to(self.metric_device).detach())
-            auroc = self.AUROC(y_hat.to(self.metric_device).detach(), y.to(self.metric_device).detach())
+            #auroc = self.AUROC(y_hat.to(self.metric_device), y.to(self.metric_device))
             #fpr, tpr, thresholds = self.ROC(y_hat, y)
 
             self.log("val_loss", val_loss)
             self.log('val_acc', acc, on_step=True, on_epoch=True, logger=True, sync_dist=self.sync_dist)
             #self.AUROC.update(y_hat.cpu().detach(), y.cpu().detach())
-            self.log("validation_auc", self.AUROC, on_step=False, on_epoch=True, sync_dist=self.sync_dist)   # prog_bar=True,
+            #self.log("validation_auc", self.AUROC, on_step=False, on_epoch=True, sync_dist=self.sync_dist)   # prog_bar=True,
 
 
 class HEEnsembleModel(pl.LightningModule):
@@ -420,7 +428,7 @@ class HEEnsembleModel(pl.LightningModule):
                  debug=False):
         super(HEEnsembleModel, self).__init__()
         self.debug = debug
-        self.sync_dist = False
+        self.sync_dist = True
         models = []
         self.n_models = 0
         for name, number in ensembles_settings.items():
@@ -440,9 +448,7 @@ class HEEnsembleModel(pl.LightningModule):
         self.CEloss = nn.CrossEntropyLoss()
         # metrics
         self.metrics = metrics
-        self.metric_device = 'cpu'
-        self.accuracy = torchmetrics.Accuracy().to(self.metric_device)
-        self.recall = torchmetrics.Recall(average='macro', num_classes=2).to(self.metric_device)
+        self.metric_device = 'cuda:1'
         #self.AUROC = torchmetrics.AUROC(num_classes=n_classes, pos_label=1)
 
     def forward(self, x):
@@ -470,13 +476,15 @@ class HEEnsembleModel(pl.LightningModule):
         y_hat = self(x)
         loss = self.get_loss(y_hat, y)
         # training metrics
-        acc = self.accuracy(torch.argmax(y_hat, dim=1).to(self.metric_device).detach(), y.to(self.metric_device).detach())
-        rec = self.recall(torch.argmax(y_hat, dim=1).to(self.metric_device).detach(), y.to(self.metric_device).detach())
+        self.accuracy = torchmetrics.Accuracy().to(self.metric_device)
+        self.recall = torchmetrics.Recall(average='macro', num_classes=2).to(self.metric_device)
+        acc = self.accuracy(torch.argmax(y_hat, dim=1).to(self.metric_device), y.to(self.metric_device))
+        rec = self.recall(torch.argmax(y_hat, dim=1).to(self.metric_device), y.to(self.metric_device))
         # optimize (done under the hoood)
 
-        self.log('train_loss', loss, on_step=True, on_epoch=True, logger=True, sync_dist=self.sync_dist)
-        self.log('train_acc', acc, on_epoch=True, logger=True, sync_dist=self.sync_dist)
-        self.log('train_rec', rec, on_epoch=True, logger=True, sync_dist=self.sync_dist)
+        self.log('train_loss', loss, on_step=True, on_epoch=True,  sync_dist=self.sync_dist)
+        self.log('train_acc', acc, on_epoch=True, sync_dist=self.sync_dist)
+        self.log('train_rec', rec, on_epoch=True,  sync_dist=self.sync_dist)
         return loss
         #return self.get_loss(y, y_hat)
 
@@ -485,15 +493,17 @@ class HEEnsembleModel(pl.LightningModule):
         y_hat = self(x)
         # compute metrics
         val_loss =self.get_loss(y_hat, y)
-        acc = self.accuracy(torch.argmax(y_hat, dim=1).to('cpu'), y.to('cpu'))
-        rec = self.recall(torch.argmax(y_hat, dim=1).to('cpu'), y.to('cpu'))
+        self.accuracy = torchmetrics.Accuracy().to(self.metric_device)
+        self.recall = torchmetrics.Recall(average='macro', num_classes=2).to(self.metric_device)
+        acc = self.accuracy(torch.argmax(y_hat, dim=1).to(self.metric_device), y.to(self.metric_device))
+        rec = self.recall(torch.argmax(y_hat, dim=1).to(self.metric_device), y.to(self.metric_device))
         if hasattr(self, 'AUROC'):
-            auroc = self.AUROC(y_hat.cpu().detach(), y.cpu().detach())
+            auroc = self.AUROC(y_hat.to(self.metric_device), y.to(self.metric_device))
         #fpr, tpr, thresholds = self.ROC(y_hat, y)
         #
-        self.log("val_loss", val_loss, on_step=True, on_epoch=True, sync_dist=self.sync_dist)
-        self.log('val_acc', acc,  on_epoch=True, logger=True, sync_dist=self.sync_dist)
-        self.log('val_rec', rec,  on_epoch=True, logger=True, sync_dist=self.sync_dist)
+        self.log("val_loss", val_loss, on_step=True, sync_dist=self.sync_dist)
+        self.log('val_acc', acc,  on_epoch=True, sync_dist=self.sync_dist)
+        self.log('val_rec', rec,  on_epoch=True, sync_dist=self.sync_dist)
         if hasattr(self, 'AUROC'):
             self.AUROC.update(y_hat.to(self.metric_device), y.to(self.metric_device))
             self.log("validation_auc", auroc, on_step=False, on_epoch=True, sync_dist=self.sync_dist)  # prog_bar=True
@@ -576,15 +586,15 @@ def main():
     
     trainer = pl.Trainer(
         accelerator="auto",   #"gpu",
-        devices=2,   #2,
+        devices='auto',   #2,
         logger=WandbLogger(project='AD-ensemble(draft)',  entity="3m-m", job_type='train'),
         max_epochs=TRAIN_ARGS.epochs, callbacks=cbs,
-        strategy="horovod",  # dp
+        strategy='dp', # "horovod",  # dp
         #plugins=DDPPlugin(find_unused_parameters=True),
     )
     
     model = HEEnsembleModel(
-        ensembles_settings={'efficientnetb7':1, 'mobilenetv3':1, 'resnext101':2},
+        ensembles_settings={'efficientnetb7':1, 'mobilenetv3':1, 'resnext101':1},
         pretrain=False,
         input_shape=(224,224),
         n_classes=MODEL_ARGS.n_classes,
@@ -592,7 +602,7 @@ def main():
     )
 
     # train
-    datamodule = HEDataModule(batch_size=TRAIN_ARGS.epochs, dataindex_path=PATH_ARGS.dataindex_path, debug=False)
+    datamodule = HEDataModule(batch_size=TRAIN_ARGS.batch_size, dataindex_path=PATH_ARGS.dataindex_path, debug=False)
     datamodule.setup()
     trainer.fit(model=model, datamodule=datamodule) 
     # save with parameters
