@@ -100,30 +100,40 @@ def get_transforms(target_size=(224,224), get_normalizing_attributes:bool=False,
                         'test': A.Compose(process_transform.transforms)}
     return set_transformers
 
+def tile_images_basic(im:np.array, patch_dims:int):
+        """ return generator object"""
+        N = patch_dims
+        for y in range(0, im.shape[1]-N+1, N):
+            for x in range(0,im.shape[0]-N+1, N):
+                yield im[x:x+M, y:y+N,:]
+                
 # dataloader
 class HEData(Dataset):
     def __init__(self, dataindex_df: pd.DataFrame,
                  x_img_cols:str=['x_img_path'], y_cols:list=['label'],
-                 transform=None, target_transform=None,
-                 debug:bool=False):
+                 transform=None, target_transform=None, patch_size=None, debug:bool=False):
         """ 
         parameters
             csv_file: contain indexer file
-
+            
         """
         self.debug = debug
         # 
         self.n = len(dataindex_df)
         # fetch individual 
         self.y_ds = dataindex_df[y_cols]
+        self.num_classes = self.y_ds.nunique()
         self.y_ds_enc = self.label_encode(self.y_ds, oh=False)
         # 
         self.transform = transform
         self.target_transform = target_transform
         if self.debug:
             print(f"Target shape:{self.y_ds_enc.shape}")
-            print(f"[INFO]{self.n} instances.")
-
+            print(f"[INFO]Image classes: {self.num_classes} with {self.n} instances.")
+        self.patch_size = patch_size
+        # if not patch_size is None:
+        #     assert patch_size[0]>=224 and patch_size[0]%224==0
+        
     def __len__(self):
         return self.n
 
@@ -142,16 +152,19 @@ class HEData(Dataset):
         if self.debug: print(f"Instance series: {self.y_ds.iloc[idx]},{self.y_ds.iloc[idx].name}, {idx}")
         parent_path, _, _, tile_name = self.y_ds.iloc[idx].name   # parent, type, source_tissue, tile_name
             # get data
-        x_data = np.array(Image.open(Path(parent_path)/tile_name))
+        if not self.patch_size is None:
+            x_data = np.concatenate([x for x in tile_images_basic(np.array(Image.open(Path(parent_path)/tile_name)),
+                                                                  patch_dims=self.patch_size)])
+        else:
+            x_data = np.array(Image.open(Path(parent_path)/tile_name))
         y_data = self.y_ds_enc[idx]    #.reshape((-1,))
         if self.transform is not None:
-            x_data = self.transform(image=x_data)['image']
-
+            x_data = [self.transform(image=x)['image'] for x in x_data]
         if self.target_transform:
             y_data = self.target_transform(y_data)
         # outputs g(t)
         if self.debug: print(x_data.shape, x_data.dtype, y_data.shape, y_data.dtype)
-        return x_data.float(), torch.tensor(y_data, dtype=torch.long)
+        return (torch.tensor(x_data).float(), torch.tensor(y_data, dtype=torch.long).tile(len(x_data)))
     
 # full dataset objecct
 class HEDataModule(pl.LightningDataModule):
@@ -165,6 +178,7 @@ class HEDataModule(pl.LightningDataModule):
         self.debug = debug
         print(f"Debug mode:{self.debug}")
         self.index_col_len = 4
+        self.patch_size = patch_size
     
     def get_sampler(self, dataset):
         """get sampler if needed"""
@@ -188,21 +202,21 @@ class HEDataModule(pl.LightningDataModule):
         dataindex_df = dataindex_df[dataindex_df['set'].isnull()!=True]
         for dset in dataindex_df['set'].unique():
             self.sampler[dset] = self.get_sampler(dataindex_df[dataindex_df['set']==dset])
-            self.datasets[dset] = HEData(dataindex_df[dataindex_df['set']==dset],
+            self.datasets[dset] = HEData(dataindex_df[dataindex_df['set']==dset], patch_size = self.patch_size,
                                          transform = self.transforms[dset], debug=self.debug)
     def custom_collate(self, batch):
-        return torch.cat(batch)
+        return torch.cat([x for x, _ in batch]), torch.cat([y for _, y in batch])
     
     def train_dataloader(self):
         train_loader = DataLoader(
             self.datasets['train'], batch_size=self.batch_size, shuffle=False if self.sampler['train'] else True, sampler=self.sampler['train'],
-            num_workers=64, pin_memory=True, collate_fn=self.custom_collate
-        )
+            #num_workers=64, pin_memory=True, 
+            collate_fn=self.custom_collate)
         return train_loader
 
     def val_dataloader(self):
         valid_loader = DataLoader(
             self.datasets['val'], batch_size=self.batch_size, shuffle=False if self.sampler['val'] else True, sampler=self.sampler['val'],
-            num_workers=64, pin_memory=True, collate_fn=self.custom_collate
-        )
+            #num_workers=64, pin_memory=True, 
+            collate_fn=self.custom_collate)
         return valid_loader
