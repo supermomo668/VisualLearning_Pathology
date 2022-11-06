@@ -150,13 +150,13 @@ class HEData(Dataset):
     def __getitem__(self, idx):
         # input images
         if self.debug: print(f"Instance series: {self.y_ds.iloc[idx]},{self.y_ds.iloc[idx].name}, {idx}")
-        parent_path, _, _, tile_name = self.y_ds.iloc[idx].name   # parent, type, source_tissue, tile_name
+        index_info = self.y_ds.iloc[idx].name   # parent, type, source_tissue, tile_name
             # get data
         if not self.patch_size is None:
-            x_data = np.concatenate([x for x in tile_images_basic(np.array(Image.open(Path(parent_path)/tile_name)),
+            x_data = np.concatenate([x for x in tile_images_basic(np.array(Image.open(Path(index_info[0])/index_info[-1])),
                                                                   patch_dims=self.patch_size)])
         else:
-            x_data = np.array(Image.open(Path(parent_path)/tile_name))
+            x_data = np.array(Image.open(Path(index_info[0])/index_info[-1]))
         y_data = self.y_ds_enc[idx]    #.reshape((-1,))
         if self.transform is not None:
             x_data = [self.transform(image=x)['image'] for x in x_data]
@@ -169,15 +169,15 @@ class HEData(Dataset):
 # full dataset objecct
 class HEDataModule(pl.LightningDataModule):
     def __init__(self, batch_size=64, dataindex_path=Path('./dataIndex.csv'), label_col='label', 
-                 patch_size=224, debug=False):
+                 index_cols:list=[] , patch_size=224, debug=False):
         super().__init__()
         self.dataindex_path = Path(dataindex_path)
         self.batch_size = batch_size
         self.label_col = label_col
+        self.index_cols = index_cols
         self.transforms = get_transforms()
         self.debug = debug
         print(f"Debug mode:{self.debug}")
-        self.index_col_len = 4
         self.patch_size = patch_size
     
     def get_sampler(self, dataset):
@@ -198,12 +198,14 @@ class HEDataModule(pl.LightningDataModule):
         self.datasets = dict()
         self.sampler = dict()
         # ['train', 'test', 'val']
-        dataindex_df = pd.read_csv(self.dataindex_path, index_col=list(range(self.index_col_len)))
-        dataindex_df = dataindex_df[dataindex_df['set'].isnull()!=True]
+        dataindex_df = pd.read_csv(self.dataindex_path, index_col=self.index_cols)
+        print(f"Setup dataindex:{dataindex_df.columns}")
+        dataindex_df = dataindex_df[~dataindex_df['set'].isnull()]
         for dset in dataindex_df['set'].unique():
             self.sampler[dset] = self.get_sampler(dataindex_df[dataindex_df['set']==dset])
             self.datasets[dset] = HEData(dataindex_df[dataindex_df['set']==dset], patch_size = self.patch_size,
                                          transform = self.transforms[dset], debug=self.debug)
+            
     def custom_collate(self, batch):
         return torch.cat([x for x, _ in batch]), torch.cat([y for _, y in batch])
     

@@ -87,7 +87,7 @@ def main(args):
     from pytorch_lightning.loggers import WandbLogger
     #
     data_index_df = pd.read_csv(PATH_ARGS.dataindex_path, index_col=list(range(4)))
-
+    print(f"Index file index: {data_index_df.index.names}, columns: {data_index_df.columns}")
     # DEFAULT (ie: no accumulated grads)
     cbs = [
         pl.callbacks.ModelCheckpoint(monitor='val_loss', dirpath=PATH_ARGS.model_path,
@@ -115,8 +115,9 @@ def main(args):
     )
 
     # train
+    index_cols = ['parent_path', 'type', 'tissue']
     datamodule = HEDataModule(batch_size=args.batchsize, dataindex_path=args.dataindex_path, patch_size=args.patchsize,
-                              debug=False)
+                              index_cols=index_cols, debug=False)
     datamodule.setup()
     trainer.fit(model=model, datamodule=datamodule) 
     # save with parameters
