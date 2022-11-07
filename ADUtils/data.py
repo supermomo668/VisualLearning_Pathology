@@ -159,7 +159,7 @@ class HEData(Dataset):
             x_data = np.array(Image.open(Path(index_info[0])/index_info[-1]))
         y_data = self.y_ds_enc[idx]    #.reshape((-1,))
         if self.transform is not None:
-            x_data = np.apply_along_axis(lambda x:  self.transform(image=x)['image'], 1, x_data) 
+            x_data = np.concatenate([self.transform(image=x)['image'] for x in x_data])
         if self.target_transform:
             y_data = self.target_transform(y_data)
         # outputs g(t)

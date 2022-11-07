@@ -13,37 +13,39 @@ from torchvision.models import EfficientNet_B7_Weights, ResNeXt101_32X8D_Weights
 
 
 class FPNclassifier(smp.FPN):
-    def __init__(self,backbone = 'timm-res2net50_14w_8s', n_classes=2, encoder_weights=None):
+    def __init__(self,backbone = 'timm-res2net50_14w_8s', n_classes=2, encoder_weights=None, **kwargs):
         # https://github.com/qubvel/segmentation_models.pytorch#encoders 
         assert backbone in ['timm-res2net50_14w_8s','efficientnet-b7', 'timm-mobilenetv3_large_minimal_100',
                             'timm-mobilenetv3_small_100']
         activation = 'softmax' if n_classes > 2 else 'sigmoid'
         super().__init__(backbone, in_channels=3, encoder_depth=5, decoder_merge_policy='cat', encoder_weights=encoder_weights,
-                        aux_params={'classes':n_classes, 'pooling': "avg", 'dropout':0.2, 'activation':activation})
-        
+                        aux_params={'classes':n_classes, 'pooling': "avg", 'activation':activation})
+        # extract ffeatures only (*, 2048, 1, 1)
+        self.feat_out = torch.nn.Sequential(*list(self.classification_head.children())[:1])
         activation = 'softmax' if n_classes > 2 else 'sigmoid'
         
     def forward(self, x):
         x = self.encoder(x)[-1]
-        class_out = nn.Sequential(*list(self.classification_head.children())[:1])(x)
-        return class_out
+        x = self.feat_out(x)
+        return x
     
      
 class Linknetclassifier(smp.Linknet):
-    def __init__(self,backbone = 'timm-res2net50_14w_8s', n_classes=2, encoder_weights=None):
+    def __init__(self, backbone = 'timm-res2net50_14w_8s', n_classes=2, encoder_weights=None, **kwargs):
         # https://github.com/qubvel/segmentation_models.pytorch#encoders 
         assert backbone in ['timm-res2net50_14w_8s','efficientnet-b7', 'timm-mobilenetv3_large_minimal_100',
                             'timm-mobilenetv3_small_100']
         activation = 'softmax' if n_classes > 2 else 'sigmoid'
         super().__init__(backbone, in_channels=3, encoder_depth=5, encoder_weights=encoder_weights,
-                        aux_params={'classes':n_classes, 'pooling': "avg", 'dropout':0.2, 'activation':activation})
-        
+                        aux_params={'classes':n_classes, 'pooling': "avg", 'activation':activation})
+        # extract ffeatures only (*, 2048, 1, 1)
+        self.feat_out = torch.nn.Sequential(*list(self.classification_head.children())[:1])
         activation = 'softmax' if n_classes > 2 else 'sigmoid'
         
     def forward(self, x):
         x = self.encoder(x)[-1]
-        class_out = nn.Sequential(*list(self.classification_head.children())[:1])(x)
-        return class_out
+        x = self.feat_out(x)
+        return x
     
 class HEClassificationModel(pl.LightningModule):
     def __init__(self, model_name:str, n_classes:int=2, pretrain:bool=True,
@@ -70,9 +72,9 @@ class HEClassificationModel(pl.LightningModule):
         else:
             # Model with a (*, n, 1,1) output
             if model_name == 'Multiscale-Linknet':
-                self.model_base = Linknetclassifier(encoder_weights='timm-mobilenetv3_small_100' if pretrain else None)
+                self.model_base = Linknetclassifier(pretrained=pretrain)
             elif model_name == 'Multiscale-FPN':
-                self.model_base = FPNclassifier(encoder_weights='timm-mobilenetv3_small_100' if pretrain else None)
+                self.model_base = FPNclassifier(pretrained=pretrain)
          
         in_feats = self._get_output_feat(self.model_base, input_size)
         # head
