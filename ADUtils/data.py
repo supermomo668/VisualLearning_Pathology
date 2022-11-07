@@ -105,7 +105,7 @@ def tile_images_basic(im:np.array, patch_dims:int):
         N = patch_dims
         for y in range(0, im.shape[1]-N+1, N):
             for x in range(0,im.shape[0]-N+1, N):
-                yield im[x:x+M, y:y+N,:]
+                yield im[x:x+N, y:y+N,:]
                 
 # dataloader
 class HEData(Dataset):
@@ -159,7 +159,7 @@ class HEData(Dataset):
             x_data = np.array(Image.open(Path(index_info[0])/index_info[-1]))
         y_data = self.y_ds_enc[idx]    #.reshape((-1,))
         if self.transform is not None:
-            x_data = [self.transform(image=x)['image'] for x in x_data]
+            x_data = np.apply_along_axis(lambda x:  self.transform(image=x)['image'], 1, x_data) 
         if self.target_transform:
             y_data = self.target_transform(y_data)
         # outputs g(t)
