@@ -20,7 +20,7 @@ from ADUtils.callbacks import *
 import pytorch_lightning as pl, torchmetrics
 import os
 #os.environ["PL_TORCH_DISTRIBUTED_BACKEND"] = "nccl"  # nccl (not for windows)
-#os.environ["CUDA_LAUNCH_BLOCKING"]="1"
+os.environ["CUDA_LAUNCH_BLOCKING"]="1"
 # https://pytorch.org/docs/stable/distributed.html
 #     Rule of thumb
 #         Use the NCCL backend for distributed GPU training
@@ -86,7 +86,8 @@ def main(args):
     from pytorch_lightning.callbacks import EarlyStopping
     from pytorch_lightning.loggers import WandbLogger
     #
-    data_index_df = pd.read_csv(PATH_ARGS.dataindex_path, index_col=list(range(4)))
+    index_cols = ['parent_path', 'type', 'tissue','x_img_path']
+    data_index_df = pd.read_csv(args.dataindex_path, index_col=list(range(len(index_cols))))
     print(f"Index file index: {data_index_df.index.names}, columns: {data_index_df.columns}")
     # DEFAULT (ie: no accumulated grads)
     cbs = [
@@ -107,7 +108,7 @@ def main(args):
     )
     
     model = HEEnsembleModel(
-        ensembles_settings={'Multiscale-FPN':2, 'Multiscale-Linknet':2},  # {'efficientnetb7':1, 'mobilenetv3':1, 'resnext101':1},
+        ensembles_settings={'Multiscale-FPN':1, 'Multiscale-Linknet':1},  # {'efficientnetb7':1, 'mobilenetv3':1, 'resnext101':1},
         pretrain=args.pretrained,
         input_shape=(224,224),
         n_classes=MODEL_ARGS.n_classes,
@@ -115,7 +116,6 @@ def main(args):
     )
 
     # train
-    index_cols = ['parent_path', 'type', 'tissue']
     datamodule = HEDataModule(batch_size=args.batchsize, dataindex_path=args.dataindex_path, patch_size=args.patchsize,
                               index_cols=index_cols, debug=False)
     datamodule.setup()
@@ -139,15 +139,14 @@ if __name__ == "__main__":
         parser.add_argument('--batchsize', dest='batchsize', type=int,
                             default=TRAIN_ARGS.batch_size, help="batch size")
         parser.add_argument('--patchsize', dest='patchsize', type=int,
-                            default=224, help="patch size")
+                            default=None, help="patch size")
         parser.add_argument('--accelerator', dest='accelerator', type=str,
                             default='gpu', help="type of accelerator")
         parser.add_argument('--n_devices', dest='n_devices', type=int,
                             default=None, help="Number of devices")
         
-        parser_group = parser.add_mutually_exclusive_group(required=False)
+        #parser_group = parser.add_mutually_exclusive_group(required=False)
         #parser_group.add_argument('--render', dest='render', action='store_true', help="Whether to render the environment.")
-        parser.set_defaults(render=False)
         return parser.parse_args()
     
     args = parse_arguments()

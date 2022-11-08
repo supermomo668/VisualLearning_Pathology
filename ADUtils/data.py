@@ -101,11 +101,11 @@ def get_transforms(target_size=(224,224), get_normalizing_attributes:bool=False,
     return set_transformers
 
 def tile_images_basic(im:np.array, patch_dims:int):
-        """ return generator object"""
-        N = patch_dims
-        for y in range(0, im.shape[1]-N+1, N):
-            for x in range(0,im.shape[0]-N+1, N):
-                yield im[x:x+N, y:y+N,:]
+    """ return generator object"""
+    N = patch_dims
+    for y in range(0, im.shape[1]-N+1, N):
+        for x in range(0,im.shape[0]-N+1, N):
+            yield im[x:x+N, y:y+N,:]
                 
 # dataloader
 class HEData(Dataset):
@@ -129,7 +129,7 @@ class HEData(Dataset):
         self.target_transform = target_transform
         if self.debug:
             print(f"Target shape:{self.y_ds_enc.shape}")
-            print(f"[INFO]Image classes: {self.num_classes} with {self.n} instances.")
+            print(f"[INFO] Image classes: {self.num_classes} with {self.n} instances.")
         self.patch_size = patch_size
         # if not patch_size is None:
         #     assert patch_size[0]>=224 and patch_size[0]%224==0
@@ -152,19 +152,23 @@ class HEData(Dataset):
         if self.debug: print(f"Instance series: {self.y_ds.iloc[idx]},{self.y_ds.iloc[idx].name}, {idx}")
         index_info = self.y_ds.iloc[idx].name   # parent, type, source_tissue, tile_name
             # get data
+                # Patch at fetch
         if not self.patch_size is None:
-            x_data = np.concatenate([x for x in tile_images_basic(np.array(Image.open(Path(index_info[0])/index_info[-1])),
-                                                                  patch_dims=self.patch_size)])
+            x_data = np.stack([x for x in tile_images_basic(
+                np.array(Image.open(Path(index_info[0])/index_info[-1])), patch_dims=self.patch_size
+            )])
+                # patch right now
         else:
-            x_data = np.array(Image.open(Path(index_info[0])/index_info[-1]))
+            x_data = np.expand_dims(np.array(Image.open(Path(index_info[0])/index_info[-1])), axis=0)  # (1, 3, N, N)
         y_data = self.y_ds_enc[idx]    #.reshape((-1,))
         if self.transform is not None:
-            x_data = np.concatenate([self.transform(image=x)['image'] for x in x_data])
+            x_data = np.stack([self.transform(image=x)['image'] for x in x_data])
         if self.target_transform:
             y_data = self.target_transform(y_data)
         # outputs g(t)
         if self.debug: print(x_data.shape, x_data.dtype, y_data.shape, y_data.dtype)
         return (torch.tensor(x_data).float(), torch.tensor(y_data, dtype=torch.long).tile(len(x_data)))
+
     
 # full dataset objecct
 class HEDataModule(pl.LightningDataModule):
